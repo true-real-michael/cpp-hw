@@ -3,8 +3,11 @@ project(qsort)
 
 set(CMAKE_CXX_STANDARD 17)
 
-#add_compile_options(-std=c++17 -stdlib=libc++ -lpthread)
+include_directories(src)
+add_subdirectory(src)
 
 add_executable(demo demo.cpp)
+target_link_libraries(demo qsort)
 
-include_directories(src)
+enable_testing()
+add_subdirectory(test)
